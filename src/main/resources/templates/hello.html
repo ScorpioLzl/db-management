@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>signUp</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div style="width:600px;height:100%;margin-left:270px;" id="login" >
+  <h1>SIGNUP</h1>
+  <form action="/signup" method="post">
+    username：<input class="form-control" type="text" th:value="${username}" name="username" required="required"><br>
+    password：<input class="form-control" type="text" th:value="${password}" name="password" required="required"><br>
+    <label>role:</label> <select name="role" style="width: 150px">
+    <option value ="customer">customer</option>
+    <option value="employee">employee</option>
+    <option value="author">author</option>
+    </select><br>
+    <button class="btn btn-primary btn-lg btn-block">signUp</button>
+  </form>
+</div>
+
+</body>
+</html>

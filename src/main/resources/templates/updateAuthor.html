@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Author</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<form action="/updateAuth" method="post" style="box-shadow: #bce8f1">
+  aid：<input class="form-control" type="text" th:value="${updateId}" name="aid" readonly="readonly">
+  afname：<input class="form-control" type="text" th:value="${afname}" name="afname">
+  alname：<input class="form-control" type="text" th:value="${alname}" name="alname">
+  st_addr：<input class="form-control" type="text" th:value="${st_addr}" name="st_addr">
+  city：<input class="form-control" type="text" th:value="${city}" name="city">
+  state：<input class="form-control" type="text" th:value="${state}" name="state">
+  zipcode：<input class="form-control" type="text" th:value="${zipcode}" name="zipcode">
+  a_email：<input class="form-control" type="text" th:value="${a_email}" name="a_email">
+  eid：<input class="form-control" type="text" th:value="${eid}" name="eid">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Author</button>
+</form>
+</body>
+</html>

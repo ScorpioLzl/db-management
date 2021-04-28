@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Author list</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+
+<body>
+<table class="table table-striped table-bordered table-hover text-center">
+  <caption style="text-align: center">Author List</caption>
+  <thead>
+  <tr style="text-align:center">
+    <th>Aid</th>
+    <th>Fname</th>
+    <th>Lname</th>
+    <th>St_addr</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th>email</th>
+    <th>Eid</th>
+    <th>Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="authors:${authors}">
+    <td th:text="${authors.aid}"></td>
+    <td th:text="${authors.afname}"></td>
+    <td th:text="${authors.alname}"></td>
+    <td th:text="${authors.st_addr}"></td>
+    <td th:text="${authors.city}"></td>
+    <td th:text="${authors.state}"></td>
+    <td th:text="${authors.zipcode}"></td>
+    <td th:text="${authors.a_email}"></td>
+    <td th:text="${authors.eid}"></td>
+    <td>
+      <a class="btn btn-primary" th:href="@{'/updateAuthor/'+${authors.aid}}">update</a>
+      <a class="btn btn-danger" th:href="@{'/deleteAuthor/'+${authors.aid}}">delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<form action="/insertAuthor" method="post" style="box-shadow: #bce8f1">
+  aid：<input class="form-control" type="text" th:value="${aid}" name="aid" required="required">
+  afname：<input class="form-control" type="text" th:value="${afname}" name="afname" required="required">
+  alname：<input class="form-control" type="text" th:value="${alname}" name="alname" required="required">
+  st_addr：<input class="form-control" type="text" th:value="${st_addr}" name="st_addr" required="required">
+  city：<input class="form-control" type="text" th:value="${city}" name="city" required="required">
+  state：<input class="form-control" type="text" th:value="${state}" name="state" required="required">
+  zipcode：<input class="form-control" type="text" th:value="${zipcode}" name="zipcode" required="required">
+  a_email：<input class="form-control" type="text" th:value="${a_email}" name="a_email" required="required">
+  eid：<input class="form-control" type="text" th:value="${eid}" name="eid">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Author</button>
+</form>
+</body>
+</html>

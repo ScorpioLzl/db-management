@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: lzl441459391
+    initial-size: 10
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+  resources:
+    static-locations: classpath:static/
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+
