@@ -1,5 +1,6 @@
 package com.database.demo.controller;
 
+import com.database.demo.entity.User;
 import com.database.demo.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +21,12 @@ public class LoginController {
         String logresult = loginservice.signIn(username, password);
         if(logresult.equals("invalid username")||logresult.equals("wrong password")){
             mv.addObject("message",logresult);
-            mv.setViewName("forward:/hello");
+            mv.setViewName("redirect:/hello");
         }else{
-            session.setAttribute("userSession",username);
+            User user = new User();
+            user.setUsername(username);
+            user.setRole(logresult);
+            session.setAttribute("userSession",user);
             mv.setViewName("redirect:/index");
         }
         return mv;

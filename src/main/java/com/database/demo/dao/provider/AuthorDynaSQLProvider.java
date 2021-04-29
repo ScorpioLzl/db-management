@@ -3,9 +3,6 @@ package com.database.demo.dao.provider;
 import com.database.demo.entity.Author;
 import org.apache.ibatis.jdbc.SQL;
 
-import java.sql.JDBCType;
-import java.sql.Types;
-
 public class AuthorDynaSQLProvider {
     public String insert_author(Author author){
        return new SQL(){

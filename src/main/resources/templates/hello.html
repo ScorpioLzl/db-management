@@ -8,7 +8,7 @@
 
 <body>
 
-<div style="width:600px;height:100%;margin-left:270px;" id="login" >
+<div style="width:600px;height:100%;margin-left:270px;" id="signUp" >
   <h1>SIGNUP</h1>
   <form action="/signup" method="post">
     username：<input class="form-control" type="text" th:value="${username}" name="username" required="required"><br>
@@ -18,7 +18,16 @@
     <option value="employee">employee</option>
     <option value="author">author</option>
     </select><br>
-    <button class="btn btn-primary btn-lg btn-block">signUp</button>
+    <button class="btn btn-primary btn-lg btn-block">SIGN UP</button>
+  </form>
+</div>
+<p  th:text="${param.message} " style="margin-left: 270px;"></p>
+<div style="width:600px;height:100%;margin-left:270px;" id="login" >
+  <h1>LOG IN</h1>
+  <form action="/login" method="post">
+    username：<input class="form-control" type="text" th:value="${username}" name="username" required="required"><br>
+    password：<input class="form-control" type="text" th:value="${password}" name="password" required="required"><br>
+    <button class="btn btn-primary btn-lg btn-block">LOG IN</button>
   </form>
 </div>
 
