@@ -3,11 +3,13 @@ package com.database.demo.dao;
 import com.database.demo.dao.provider.PaymentDynaSQLProvider;
 import com.database.demo.entity.Payment;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
+@Mapper
 public interface PaymentDao {
     @Select("select * from zl_payment")
     List<Payment> get_list();

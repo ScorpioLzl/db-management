@@ -3,11 +3,13 @@ package com.database.demo.dao;
 import com.database.demo.dao.provider.RentalDynaSQLProvider;
 import com.database.demo.entity.Rental;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
+@Mapper
 public interface RentalDao {
     @Select("select * from zl_rental")
     List<Rental> get_list();

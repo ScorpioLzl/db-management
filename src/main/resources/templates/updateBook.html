@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Update Book</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
 </head>
+<style>
+    a{
+        color:#fff;
+    }
+</style>
 <body>
-$END$
+<a class="btn btn-primary" href="/books">Back</a>
+<form action="/updateBook1" method="post" style="box-shadow: #bce8f1">
+    bid：<input class="form-control" type="text" th:value="${updateId}" name="bid" readonly="readonly">
+    bname：<input class="form-control" type="text" th:value="${bname}" name="bname">
+    topic：<input class="form-control" type="text" th:value="${topic}" name="topic">
+    <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Book</button>
+</form>
 </body>
 </html>

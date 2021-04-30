@@ -3,11 +3,13 @@ package com.database.demo.dao;
 import com.database.demo.dao.provider.CustomerDynaSQLProvider;
 import com.database.demo.entity.Customer;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
+@Mapper
 public interface CustomerDao {
     @Select("select * from zl_customer")
     List<Customer> get_list();

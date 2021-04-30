@@ -3,11 +3,13 @@ package com.database.demo.dao;
 import com.database.demo.dao.provider.SponsorDynaSQLProvider;
 import com.database.demo.entity.Sponsor;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
+@Mapper
 public interface SponsorDao {
     @Select("select * from zl_sponsor")
     List<Sponsor> get_list();

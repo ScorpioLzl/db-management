@@ -3,11 +3,13 @@ package com.database.demo.dao;
 import com.database.demo.dao.provider.RoomDynaSQLProvider;
 import com.database.demo.entity.Room;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
+@Mapper
 public interface RoomDao {
     @Select("select * from zl_room")
     List<Room> get_list();
