@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Event list</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+
+<body>
+<a class="btn btn-primary" href="/index">Home Page</a>
+<table class="table table-striped table-bordered table-hover text-center">
+  <caption style="text-align: center">Event List</caption>
+  <thead>
+  <tr style="text-align:center">
+    <th>Eid</th>
+    <th>Ename</th>
+    <th>Etype</th>
+    <th>Starttime</th>
+    <th>Stoptime</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="events:${events}">
+    <td th:text="${events.eid}"></td>
+    <td th:text="${events.ename}"></td>
+    <td th:text="${events.etype}"></td>
+    <td th:text="${events.starttime}"></td>
+    <td th:text="${events.stoptime}"></td>
+    <td>
+      <a class="btn btn-primary" th:href="@{'/updateEvent/'+${events.eid}}">update</a>
+      <a class="btn btn-danger" th:href="@{'/deleteEvent/'+${events.eid}}">delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<form action="/insertEvent" method="post" style="box-shadow: #bce8f1">
+  eid：<input class="form-control" type="text" th:value="${eid}" name="eid" required="required">
+  ename：<input class="form-control" type="text" th:value="${ename}" name="ename" required="required">
+  etype：<input class="form-control" type="text" th:value="${etype}" name="etype" required="required">
+  starttime：<input class="form-control" type="text" th:value="${starttime}" name="starttime" required="required">
+  stoptime：<input class="form-control" type="text" th:value="${stoptime}" name="stoptime" required="required">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Event</button>
+</form>
+</body>
+</html>

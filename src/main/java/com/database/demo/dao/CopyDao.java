@@ -14,6 +14,9 @@ public interface CopyDao {
     @Select("select * from zl_copies")
     List<Copy> get_list();
 
+    @Select("select count(*) from zl_copies where bid = #{bid}")
+    String countCopy(String bid);
+
     @SelectProvider(type= CopyDynaSQLProvider.class,method="insert_copy")
     void insert_copy(Copy copy);
 

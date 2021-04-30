@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Copy implements Serializable {
     private String copyid;
-    private String status;
+    private String cstatus;
     private String bid;
     private String rid;
 
@@ -16,12 +16,12 @@ public class Copy implements Serializable {
         this.copyid = copyid;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCstatus() {
+        return cstatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCstatus(String cstatus) {
+        this.cstatus = cstatus;
     }
 
     public String getBid() {

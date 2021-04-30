@@ -20,6 +20,6 @@ public interface CustomerDao {
     @SelectProvider(type= CustomerDynaSQLProvider.class,method="update_customer")
     void update_customer(Customer customer);
 
-    @Delete("delete from zl_customers where cid = #{cid}")
+    @Delete("delete from zl_customer where cid = #{cid}")
     int delete_customer(int cid);
 }

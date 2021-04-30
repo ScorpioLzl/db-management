@@ -20,6 +20,6 @@ public interface RoomDao {
     @SelectProvider(type= RoomDynaSQLProvider.class,method="update_room")
     void update_room(Room room);
 
-    @Delete("delete from zl_rooms where roomid = #{roomid}")
+    @Delete("delete from zl_room where roomid = #{roomid}")
     int delete_room(int roomid);
 }

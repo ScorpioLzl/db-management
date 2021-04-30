@@ -20,6 +20,6 @@ public interface EventDao {
     @SelectProvider(type= EventDynaSQLProvider.class,method="update_event")
     void update_event(Event event);
 
-    @Delete("delete from zl_events where eid = #{eid}")
+    @Delete("delete from zl_event where eid = #{eid}")
     int delete_event(int eid);
 }

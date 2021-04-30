@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Copy</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+    a{
+        color:#fff;
+    }
+</style>
+<body>
+<a class="btn btn-primary" href="/copies">Back</a>
+<form action="/updateCopy1" method="post" style="box-shadow: #bce8f1">
+    copyid：<input class="form-control" type="text" th:value="${updateId}" name="copyid" readonly="readonly">
+    cstatus：<input class="form-control" type="text" th:value="${cstatus}" name="cstatus">
+    bid：<input class="form-control" type="text" th:value="${bid}" name="bid">
+    rid：<input class="form-control" type="text" th:value="${rid}" name="rid">
+    <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Copy</button>
+</form>
+</body>
+</html>

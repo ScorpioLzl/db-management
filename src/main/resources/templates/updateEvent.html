@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Event</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<a class="btn btn-primary" href="/events">Back</a>
+<form action="/updateEvent1" method="post" style="box-shadow: #bce8f1">
+  eid：<input class="form-control" type="text" th:value="${updateId}" name="eid" readonly="readonly">
+  ename：<input class="form-control" type="text" th:value="${ename}" name="ename">
+  etype：<input class="form-control" type="text" th:value="${etype}" name="etype">
+  starttime：<input class="form-control" type="text" th:value="${starttime}" name="starttime">
+  stoptime：<input class="form-control" type="text" th:value="${stoptime}" name="stoptime">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Event</button>
+</form>
+</body>
+</html>

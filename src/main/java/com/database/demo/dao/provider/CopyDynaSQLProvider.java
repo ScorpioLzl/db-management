@@ -11,8 +11,8 @@ public class CopyDynaSQLProvider {
                 if(copy.getCopyid()!=""){
                     VALUES("copyid","#{copyid}");
                 }
-                if(copy.getStatus()!="") {
-                    VALUES("status", "#{status}");
+                if(copy.getCstatus()!="") {
+                    VALUES("cstatus", "#{cstatus}");
                 }
                 if(copy.getBid()!=""){
                     VALUES("bid","#{bid}");
@@ -27,8 +27,8 @@ public class CopyDynaSQLProvider {
         return new SQL(){
             {
                 UPDATE("zl_copies");
-                if(copy.getStatus()!=""){
-                    SET("status = #{status}");
+                if(copy.getCstatus()!=""){
+                    SET("cstatus = #{cstatus}");
                 }
                 if(copy.getBid()!=""){
                     SET("bid = #{bid}");

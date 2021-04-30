@@ -20,6 +20,6 @@ public interface PaymentDao {
     @SelectProvider(type= PaymentDynaSQLProvider.class,method="update_payment")
     void update_payment(Payment payment);
 
-    @Delete("delete from zl_payments where pid = #{pid}")
+    @Delete("delete from zl_payment where pid = #{pid}")
     int delete_payment(int pid);
 }

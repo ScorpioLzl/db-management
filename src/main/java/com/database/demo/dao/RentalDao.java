@@ -20,6 +20,6 @@ public interface RentalDao {
     @SelectProvider(type= RentalDynaSQLProvider.class,method="update_rental")
     void update_rental(Rental rental);
 
-    @Delete("delete from zl_rentals where rid = #{rid}")
+    @Delete("delete from zl_rental where rid = #{rid}")
     int delete_rental(int rid);
 }

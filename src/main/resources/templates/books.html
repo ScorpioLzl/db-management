@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Author list</title>
+  <title>Book list</title>
   <link href="/css/bootstrap.css" rel="stylesheet">
 </head>
 
@@ -21,6 +21,7 @@
     <th>Bid</th>
     <th>Bname</th>
     <th>Topic</th>
+    <th>NumOfCopy</th>
   </tr>
   </thead>
   <tbody>
@@ -28,6 +29,7 @@
     <td th:text="${books.bid}"></td>
     <td th:text="${books.bname}"></td>
     <td th:text="${books.topic}"></td>
+    <td th:text="${books.numOfCopies}"></td>
     <td>
       <a class="btn btn-primary" th:href="@{'/updateBook/'+${books.bid}}">update</a>
       <a class="btn btn-danger" th:href="@{'/deleteBook/'+${books.bid}}">delete</a>

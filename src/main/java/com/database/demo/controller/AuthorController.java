@@ -28,7 +28,7 @@ public class AuthorController {
         return mv;
     }
     @GetMapping("/updateAuthor/{id}")
-    public ModelAndView update_author(@PathVariable Integer id,ModelAndView mv){
+    public ModelAndView update_author(@PathVariable String id,ModelAndView mv){
         mv.addObject("updateId",id);
         mv.setViewName("forward:/updateAuthor");
         return mv;

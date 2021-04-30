@@ -20,6 +20,6 @@ public interface SponsorDao {
     @SelectProvider(type= SponsorDynaSQLProvider.class,method="update_sponsor")
     void update_sponsor(Sponsor sponsor);
 
-    @Delete("delete from zl_sponsors where sid = #{sid}")
+    @Delete("delete from zl_sponsor where sid = #{sid}")
     int delete_sponsor(int sid);
 }

@@ -2,6 +2,7 @@ package com.database.demo.controller;
 
 import com.database.demo.entity.Book;
 import com.database.demo.service.BookService;
+import com.database.demo.service.CopyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +16,17 @@ import java.util.List;
 public class BookController {
     @Autowired
     BookService bookService;
+    @Autowired
+    CopyService copyService;
 
     @RequestMapping("/books")
     public ModelAndView getBooks(ModelAndView mv){
         List<Book> list = bookService.select_books();
+        for(Book b:list){
+            String numOfCopy = copyService.countCopy(b.getBid());
+            numOfCopy = numOfCopy == "" ? "0" : numOfCopy;
+            b.setNumOfCopies(numOfCopy);
+        }
         mv.addObject("books",list);
         return mv;
     }
@@ -29,7 +37,7 @@ public class BookController {
         return mv;
     }
     @GetMapping("/updateBook/{id}")
-    public ModelAndView update_book(@PathVariable Integer id,ModelAndView mv){
+    public ModelAndView update_book(@PathVariable String id,ModelAndView mv){
         mv.addObject("updateId",id);
         mv.setViewName("forward:/updateBook");
         return mv;

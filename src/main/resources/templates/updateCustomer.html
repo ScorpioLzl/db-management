@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Customer</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<a class="btn btn-primary" href="/customers">Back</a>
+<form action="/updateCustomer1" method="post" style="box-shadow: #bce8f1">
+  cid：<input class="form-control" type="text" th:value="${updateId}" name="cid" readonly="readonly">
+  fname：<input class="form-control" type="text" th:value="${fname}" name="fname">
+  lname：<input class="form-control" type="text" th:value="${lname}" name="lname">
+  phone：<input class="form-control" type="text" th:value="${phone}" name="phone">
+  email：<input class="form-control" type="text" th:value="${email}" name="email">
+  id_type：<input class="form-control" type="text" th:value="${id_type}" name="id_type">
+  id_number：<input class="form-control" type="text" th:value="${id_number}" name="id_number">
+  eid：<input class="form-control" type="text" th:value="${eid}" name="eid">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Customer</button>
+</form>
+</body>
+</html>
