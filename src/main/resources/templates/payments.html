@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment list</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+
+<body>
+<a class="btn btn-primary" href="/index">Home Page</a>
+<table class="table table-striped table-bordered table-hover text-center">
+  <caption style="text-align: center">Payment List</caption>
+  <thead>
+  <tr style="text-align:center">
+    <th>Pid</th>
+    <th>Pdate</th>
+    <th>Method</th>
+    <th>Holder_fname</th>
+    <th>Holder_lname</th>
+    <th>Pamount</th>
+    <th>Cid</th>
+    <th>Iid</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="payments:${payments}">
+    <td th:text="${payments.pid}"></td>
+    <td th:text="${payments.pdate}"></td>
+    <td th:text="${payments.method}"></td>
+    <td th:text="${payments.holder_fname}"></td>
+    <td th:text="${payments.holder_lname}"></td>
+    <td th:text="${payments.pamount}"></td>
+    <td th:text="${payments.cid}"></td>
+    <td th:text="${payments.iid}"></td>
+    <td>
+      <a class="btn btn-primary" th:href="@{'/updatePayment/'+${payments.pid}}">update</a>
+      <a class="btn btn-danger" th:href="@{'/deletePayment/'+${payments.pid}}">delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<form action="/insertPayment" method="post" style="box-shadow: #bce8f1">
+  pid：<input class="form-control" type="text" th:value="${pid}" name="pid" required="required">
+  pdate：<input class="form-control" type="text" th:value="${pdate}" name="pdate" required="required">
+  method：<input class="form-control" type="text" th:value="${method}" name="method" required="required">
+  holder_fname：<input class="form-control" type="text" th:value="${holder_fname}" name="holder_fname" required="required">
+  holder_lname：<input class="form-control" type="text" th:value="${holder_lname}" name="holder_lname" required="required">
+  pamount：<input class="form-control" type="text" th:value="${pamount}" name="pamount" required="required">
+  cid：<input class="form-control" type="text" th:value="${cid}" name="cid" required="required">
+  iid：<input class="form-control" type="text" th:value="${iid}" name="iid" required="required">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Payment</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Sponsor</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<a class="btn btn-primary" href="/sponsors">Back</a>
+<form action="/updateSponsor1" method="post" style="box-shadow: #bce8f1">
+  sid：<input class="form-control" type="text" th:value="${sid}" name="sid" required="required">
+  stype：<input class="form-control" type="text" th:value="${stype}" name="stype" required="required">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Sponsor</button>
+</form>
+</body>
+</html>

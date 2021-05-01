@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Room</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<a class="btn btn-primary" href="/rooms">Back</a>
+<form action="/updateRoom1" method="post" style="box-shadow: #bce8f1">
+  roomid：<input class="form-control" type="text" th:value="${roomid}" name="roomid" required="required">
+  capacity：<input class="form-control" type="text" th:value="${capacity}" name="capacity" required="required">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Room</button>
+</form>
+</body>
+</html>

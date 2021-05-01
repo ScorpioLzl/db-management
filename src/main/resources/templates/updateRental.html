@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Rental</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<a class="btn btn-primary" href="/rentals">Back</a>
+<form action="/updateRental1" method="post" style="box-shadow: #bce8f1">
+  rid：<input class="form-control" type="text" th:value="${rid}" name="rid" required="required">
+  rstatus：<input class="form-control" type="text" th:value="${rstatus}" name="rstatus" required="required">
+  borrow_date：<input class="form-control" type="text" th:value="${borrow_date}" name="borrow_date" required="required">
+  expected_rdate：<input class="form-control" type="text" th:value="${expected_rdate}" name="expected_rdate" required="required">
+  actual_rdate：<input class="form-control" type="text" th:value="${actual_rdate}" name="actual_rdate" required="required">
+  copyid：<input class="form-control" type="text" th:value="${copyid}" name="copyid" required="required">
+  iid：<input class="form-control" type="text" th:value="${iid}" name="iid" required="required">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Rental</button>
+</form>
+</body>
+</html>

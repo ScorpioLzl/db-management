@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rental list</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<style>
+    a{
+        color:#fff;
+    }
+</style>
+
+<body>
+<a class="btn btn-primary" href="/index">Home Page</a>
+<table class="table table-striped table-bordered table-hover text-center">
+    <caption style="text-align: center">Rental List</caption>
+    <thead>
+    <tr style="text-align:center">
+        <th>Rid</th>
+        <th>Rstatus</th>
+        <th>Borrow_date</th>
+        <th>Expected_rdate</th>
+        <th>Actual_rdate</th>
+        <th>Copyid</th>
+        <th>Iid</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="rentals:${rentals}">
+        <td th:text="${rentals.rid}"></td>
+        <td th:text="${rentals.rstatus}"></td>
+        <td th:text="${rentals.borrow_date}"></td>
+        <td th:text="${rentals.expected_rdate}"></td>
+        <td th:text="${rentals.actual_rdate}"></td>
+        <td th:text="${rentals.copyid}"></td>
+        <td th:text="${rentals.iid}"></td>
+        <td>
+            <a class="btn btn-primary" th:href="@{'/updateRental/'+${rentals.rid}}">update</a>
+            <a class="btn btn-danger" th:href="@{'/deleteRental/'+${rentals.rid}}">delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/insertRental" method="post" style="box-shadow: #bce8f1">
+    rid：<input class="form-control" type="text" th:value="${rid}" name="rid" required="required">
+    rstatus：<input class="form-control" type="text" th:value="${rstatus}" name="rstatus" required="required">
+    borrow_date：<input class="form-control" type="text" th:value="${borrow_date}" name="borrow_date" required="required">
+    expected_rdate：<input class="form-control" type="text" th:value="${expected_rdate}" name="expected_rdate" required="required">
+    actual_rdate：<input class="form-control" type="text" th:value="${actual_rdate}" name="actual_rdate" required="required">
+    copyid：<input class="form-control" type="text" th:value="${copyid}" name="copyid" required="required">
+    iid：<input class="form-control" type="text" th:value="${iid}" name="iid" required="required">
+    <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Rental</button>
+</form>
+</body>
+</html>

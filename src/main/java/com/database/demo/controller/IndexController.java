@@ -15,4 +15,14 @@ public class IndexController {
     public String index(Model model){
         return "index";
     }
+
+    @RequestMapping(value = "/index_c")
+    public String index_c(Model model){
+        return "index_c";
+    }
+
+    @RequestMapping(value = "/index_a")
+    public String index_a(Model model){
+        return "index_a";
+    }
 }
