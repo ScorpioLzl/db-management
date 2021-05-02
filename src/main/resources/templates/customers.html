@@ -52,7 +52,11 @@
     lname：<input class="form-control" type="text" th:value="${lname}" name="lname" required="required">
     phone：<input class="form-control" type="text" th:value="${phone}" name="phone" required="required">
     email：<input class="form-control" type="text" th:value="${email}" name="email" required="required">
-    id_type：<input class="form-control" type="text" th:value="${id_type}" name="id_type" required="required">
+    <label>id_type:</label> <select name="id_type" style="width: 150px">
+    <option value ="P">Passport</option>
+    <option value="S">SSN</option>
+    <option value="D">Driver license</option>
+</select><br>
     id_number：<input class="form-control" type="text" th:value="${id_number}" name="id_number" required="required">
     eid：<input class="form-control" type="text" th:value="${eid}" name="eid">
     <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Customer</button>

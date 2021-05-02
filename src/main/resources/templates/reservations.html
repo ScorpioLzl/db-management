@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation list</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<style>
+    a{
+        color:#fff;
+    }
+</style>
+
+<body>
+<a class="btn btn-primary" href="/index">Home Page</a>
+<table class="table table-striped table-bordered table-hover text-center">
+    <caption style="text-align: center">Reservation List</caption>
+    <thead>
+    <tr style="text-align:center">
+        <th>Reservation_id</th>
+        <th>Roomid</th>
+        <th>Slot</th>
+        <th>Cid</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="reservations:${reservations}">
+        <td th:text="${reservations.reservation_id}"></td>
+        <td th:text="${reservations.roomid}"></td>
+        <td th:text="${reservations.slot}"></td>
+        <td th:text="${reservations.cid}"></td>
+        <td>
+            <a class="btn btn-primary" th:href="@{'/updateReservation/'+${reservations.reservation_id}}">update</a>
+            <a class="btn btn-danger" th:href="@{'/deleteReservation/'+${reservations.reservation_id}}">delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/insertReservation" method="post" style="box-shadow: #bce8f1">
+    reservation_id：<input class="form-control" type="text" th:value="${reservation_id}" name="reservation_id" required="required">
+    roomid：<input class="form-control" type="text" th:value="${roomid}" name="roomid" required="required">
+    <label>slot:</label> <select name="slot" style="width: 150px">
+    <option value ="8 AM to 10 AM">8 AM to 10 AM</option>
+    <option value="11 AM to 1 PM">11 AM to 1 PM</option>
+    <option value="1 PM to 3 PM">1 PM to 3 PM</option>
+    <option value="4 PM to 6 PM">1 PM to 3 PM</option>
+    </select><br>
+    cid：<input class="form-control" type="text" th:value="${cid}" name="cid" required="required">
+    <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Reservation</button>
+</form>
+<p  th:text="${param.message} " style="margin-left: 270px;"></p>
+</body>
+</html>

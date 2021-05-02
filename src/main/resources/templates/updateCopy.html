@@ -14,7 +14,10 @@
 <a class="btn btn-primary" href="/copies">Back</a>
 <form action="/updateCopy1" method="post" style="box-shadow: #bce8f1">
     copyid：<input class="form-control" type="text" th:value="${updateId}" name="copyid" readonly="readonly">
-    cstatus：<input class="form-control" type="text" th:value="${cstatus}" name="cstatus">
+    <label>cstatus:</label> <select name="cstatus" style="width: 150px">
+    <option value ="A">Available</option>
+    <option value="N">Not available</option>
+    </select><br>
     bid：<input class="form-control" type="text" th:value="${bid}" name="bid">
     rid：<input class="form-control" type="text" th:value="${rid}" name="rid">
     <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Copy</button>

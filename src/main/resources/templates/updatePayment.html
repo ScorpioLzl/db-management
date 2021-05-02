@@ -15,7 +15,12 @@
 <form action="/updatePayment1" method="post" style="box-shadow: #bce8f1">
   pid：<input class="form-control" type="text" th:value="${pid}" name="pid" required="required">
   pdate：<input class="form-control" type="text" th:value="${pdate}" name="pdate" required="required">
-  method：<input class="form-control" type="text" th:value="${method}" name="method" required="required">
+  <label>method:</label> <select name="method" style="width: 150px">
+  <option value ="Cash">Cash</option>
+  <option value="Credit">Credit</option>
+  <option value="Debit">Debit</option>
+  <option value="Paypal">Paypal</option>
+</select><br>
   holder_fname：<input class="form-control" type="text" th:value="${holder_fname}" name="holder_fname" required="required">
   holder_lname：<input class="form-control" type="text" th:value="${holder_lname}" name="holder_lname" required="required">
   pamount：<input class="form-control" type="text" th:value="${pamount}" name="pamount" required="required">

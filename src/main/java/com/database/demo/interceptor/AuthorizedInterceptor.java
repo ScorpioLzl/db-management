@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthorizedInterceptor implements HandlerInterceptor {
     private static final String[] IGNORE_URI = {"/hello","/login","/signup"};
     private static final String[] AUTHOR_URI = {"/index_a","/books","/events"};
-    private static final String[] CUSTOMER_URI = {"/index_c","/books","/events"};
+    private static final String[] CUSTOMER_URI = {"/index_c","/books","/events","/reservations","/insertReservation"};
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         boolean flag = false;

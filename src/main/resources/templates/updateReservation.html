@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Reservation</title>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<style>
+  a{
+    color:#fff;
+  }
+</style>
+<body>
+<a class="btn btn-primary" href="/reservations">Back</a>
+<form action="/insertReservation" method="post" style="box-shadow: #bce8f1">
+  reservation_id：<input class="form-control" type="text" th:value="${reservation_id}" name="reservation_id" required="required">
+  roomid：<input class="form-control" type="text" th:value="${roomid}" name="roomid" required="required">
+  <label>slot:</label> <select name="slot" style="width: 150px">
+  <option value ="8 AM to 10 AM">8 AM to 10 AM</option>
+  <option value="11 AM to 1 PM">11 AM to 1 PM</option>
+  <option value="1 PM to 3 PM">1 PM to 3 PM</option>
+  <option value="4 PM to 6 PM">1 PM to 3 PM</option>
+</select><br>
+  cid：<input class="form-control" type="text" th:value="${cid}" name="cid" required="required">
+  <button class="btn btn-primary btn-lg btn-block" style="height:50px">Update Reservation</button>
+</form>
+<p  th:text="${param.message} " style="margin-left: 270px;"></p>
+</body>
+</html>

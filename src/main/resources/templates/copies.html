@@ -40,7 +40,10 @@
 
 <form action="/insertCopy" method="post" style="box-shadow: #bce8f1">
   copyid：<input class="form-control" type="text" th:value="${copyid}" name="copyid" required="required">
-  cstatus：<input class="form-control" type="text" th:value="${cstatus}" name="cstatus" required="required">
+  <label>cstatus:</label> <select name="cstatus" style="width: 150px">
+  <option value ="A">Available</option>
+  <option value="N">Not available</option>
+</select><br>
   bid：<input class="form-control" type="text" th:value="${bid}" name="bid" required="required">
   rid：<input class="form-control" type="text" th:value="${rid}" name="rid">
   <button class="btn btn-primary btn-lg btn-block" style="height:50px">Insert Copy</button>
